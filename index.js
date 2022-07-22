@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
+const path = require('path');
 const generateMarkdown = require("./utils/generateMarkdown.js");
 
 // TODO: Create an array of questions for user input
@@ -29,7 +30,7 @@ const promptQuestions = ()=>{
 {
     type:"input",
     name: "Contributing",
-    message: "Please list all contributors for your project."
+    message: "Please provide guidelines for other deevelopers on how to contribute to your project."
 },
 {
     type: "input",
@@ -62,7 +63,13 @@ const promptQuestions = ()=>{
 };
 promptQuestions();
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+fs.writeFile("README.md", generateMarkdown, err =>{
+    if (err) throw err;
+    console.log("README generated!");
+})
+};
+writeToFile();
 
 // TODO: Create a function to initialize app
 function init() {}
