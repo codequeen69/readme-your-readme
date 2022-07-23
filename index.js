@@ -3,6 +3,7 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const path = require('path');
 const generateMarkdown = require("./utils/generateMarkdown.js");
+const generatePage = require("./utils/page-template")
 
 // TODO: Create an array of questions for user input
 const promptQuestions = ()=>{
@@ -61,10 +62,10 @@ const promptQuestions = ()=>{
 
     ])  
 };
-promptQuestions();
+promptQuestions().then(answerObj);
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-fs.writeFile("README.md", generateMarkdown, err =>{
+fs.writeFile("./README.md", generateMarkdown(data), err =>{
     if (err) throw err;
     console.log("README generated!");
 })
@@ -72,7 +73,9 @@ fs.writeFile("README.md", generateMarkdown, err =>{
 writeToFile();
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+
+}
 
 // Function call to initialize app
 init();
