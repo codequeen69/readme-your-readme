@@ -28,7 +28,7 @@ function renderLicenseLink(license) {
   
   }
   else{
-    `*[License](#license)`
+  return `* [License](#license)`
   }  
 };
 
@@ -48,19 +48,19 @@ else{
 function generateMarkdown(data) {
     
     return `# ${data.title} 
-
-    ## ${renderLicenseBadge(data.license)}
+## ${renderLicenseBadge(data.license)}
   
   ## Description
   ${data.description}
 
-  ## Table of Contents
-    *[Installation](#installation)
-    *[Usage](#usage)
-    *[${renderLicenseLink(data.license)}](#license)
-    *[Contribution](#contribution)
-    *[Tests](#tests)
-    *[Questions](#questions)
+  ## Table of Contents:
+* [Installation](#installation)
+* [Usage](#usage)
+
+ ${renderLicenseLink(data.license)}
+* [Contribution](#contribution)
+* [Tests](#tests)
+* [Questions](#questions)
   
   ## Installation
   ${data.installation}

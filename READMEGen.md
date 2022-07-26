@@ -1,39 +1,39 @@
-# Readme-Your_Readme 
-
-    ## 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# Read Me Your README 
+## 
+    [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 
   
   ## Description
-  This project is a README.md generator.
+  This is a README.md generator.
 
-  ## Table of Contents
-    *[Installation](#installation)
-    *[Usage](#usage)
-    undefined
-    *[Contribution](#contribution)
-    *[Tests](#tests)
-    *[Questions](#questions)
+  ## Table of Contents:
+* [Installation](#installation)
+* [Usage](#usage)
+
+ * [License](#license)
+* [Contribution](#contribution)
+* [Tests](#tests)
+* [Questions](#questions)
   
   ## Installation
-  Please install node.js and inquirer.
+  Please install Node.js and Inquirer from NPM.
 
   ## Usage
-  To use you must answer prompts given in the command line.
+  You will be promted with questions from the command line. Once all questions are answered, a README.md will be generated.
   
   ## License
-  This project is licensed under: MIT
+  This project is licensed under: ISC
   
   ## Contribution
-  Please contact me for ways to contribute
+  Please email me for ideas on how to contrinute to this project.
 
   ## Tests
-  undefined
+  Run tests.
 
   ## Questions
-  Please feel free to emial me with any further questions!
+  https://github.com/codequeen69
 
   crhowe90@gmail.com
 
-  codequeen69 GitHub profile: https://github.com/codequeen69
+  GitHub profile for codequeen69: contact me
   
