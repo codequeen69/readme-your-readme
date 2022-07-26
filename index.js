@@ -1,15 +1,14 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
-const path = require('path');
-const generateMarkdown = require("./utils/generateMarkdown.js");
-const generatePage = require("./utils/page-template")
+const generateMarkdown = require("./utils/page-template");
+const generatePage = require("./utils/generateMarkdown");
 
 // TODO: Create an array of questions for user input
 const promptQuestions = ()=>{
     return inquirer.prompt([
 {   type: "input",
-    name: "project title",
+    name: "title",
     message: "What is the title of your project?"
 
 },
@@ -30,12 +29,12 @@ const promptQuestions = ()=>{
 },
 {
     type:"input",
-    name: "Contributing",
-    message: "Please provide guidelines for other deevelopers on how to contribute to your project."
+    name: "contribution",
+    message: "Please provide guidelines for other developers on how to contribute to your project."
 },
 {
     type: "input",
-    name: "email/questions",
+    name: "email",
     message: "Please provide an email for where you can be contacted for further questions on your project. "
 },
 {
@@ -45,14 +44,19 @@ const promptQuestions = ()=>{
 },
 {
     type: "input",
-    name: "username",
-    message:"What is vour username?"
+    name: "github",
+    message:"What is vour GitHubusername?"
 },
 {
-    type: "checkbox",
+    type: "list",
     name: "license",
     message: "Please choose a license for your project.",
-    choices: ['Apache License 2.0', 'MIT', 'ISC', 'GNU GPLv3']
+    choices: ['MIT', 'ISC', 'Apache 2.0', 'none']
+},
+{
+    type: "input",
+    name: "questions",
+    message: "Please provide information on how one might contact you with further questions."
 },
 {
     type: "input",
@@ -62,20 +66,16 @@ const promptQuestions = ()=>{
 
     ])  
 };
-promptQuestions().then(answerObj);
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-fs.writeFile("./README.md", generateMarkdown(data), err =>{
-    if (err) throw err;
-    console.log("README generated!");
-})
-};
-writeToFile();
-
-// TODO: Create a function to initialize app
-function init() {
-
+promptQuestions().
+then((data)=>{
+    console.log(data);
+    fs.writeFile("READMEGen.md", generateMarkdown(data), function(err){
+if(err){
+    console.log("ERROR")
 }
-
-// Function call to initialize app
-init();
+else{
+    console.log("readme generated!")
+}
+    } )
+    
+})
