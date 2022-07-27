@@ -12,6 +12,7 @@ For this project, I wanted to create a README.md generator for other developers 
 ![Screen Shot 2022-07-26 at 5 40 32 PM](https://user-images.githubusercontent.com/104512547/181124521-d459e076-b9d9-4b0a-8d1e-0b9135cf867a.png)
 
 ## Video
+https://watch.screencastify.com/v/rSJHKGZlz1NQ9jIIgb9K
 
 ## Website
 https://github.com/codequeen69/readme-your-readme
